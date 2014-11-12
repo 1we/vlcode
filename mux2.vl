@@ -1,0 +1,26 @@
+module mux(
+  input a,
+  input b,
+  input c,
+  input d,
+  input e,
+  input f,
+  input g,
+  input h,
+  input[2:0]s,
+  output reg o
+  );
+  always @(s)
+  begin
+     case(s)
+       3'b000:o=a;
+       3'b001:o=b;
+       3'b010:o=c;
+       3'b011:o=d;
+       3'b100:o=e;
+       3'b101:o=f;
+       3'b110:o=g;
+       default:o=h;
+     endcase
+   end
+ endmodule
