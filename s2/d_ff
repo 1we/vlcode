@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity d_ff is
+  port(D,Clk:in std_logic;
+       Q:inout std_logic;
+       Qbar:out std_logic);
+end d_ff; 
+                                            
+architecture behavioral of d_ff is
+begin
+  process(clk)
+    begin
+      if rising_edge(clk)then
+      Q<=D;
+    end if;
+  end process;
+  Qbar<=not Q;
+  
+end behavioral;
